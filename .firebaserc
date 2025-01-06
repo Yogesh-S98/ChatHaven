@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "chathaven-932ad",
+    "staging": "chathaven-932ad"
+  },
+  "targets": {},
+  "etags": {}
+}
