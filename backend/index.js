@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const bodyParse = require('body-parser');
 const dotenv = require('dotenv');
 const authRoutes = require("./auth");
-
+const functions = require('firebase-functions');
 
 const app = express();
 const cors = require('cors');
@@ -124,7 +124,16 @@ app.get('/proxy-image', async (req, res) => {
 })
 app.use("/api/auth", authRoutes);
 
+// Serve the static files from the React app
+// app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+// // Catch-all route to serve the index.html for any route
+// app.get('*', (req, res) => {
+//   res.sendFile(.join(__dirname, 'frontend/build', 'index.html'));
+// });
+
 const port = 4000;
 app.listen(port, () => {
     console.log('server running');
 })
+exports.app = functions.https.onRequest(app);
