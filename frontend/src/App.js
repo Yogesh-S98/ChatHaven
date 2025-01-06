@@ -216,7 +216,7 @@ function App() {
                     <div style={{ display: 'flex' }}>
                       <img src={Logo} width={50} height={50} style={{ marginTop: '10px' }}/>
                       <h1 style={{ marginTop: '0px' }}>
-                        ChatHaven
+                        ChatHaven (new)
                       </h1>
                     </div>
               </Col>
